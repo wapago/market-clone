@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .note-num {
+        position: absolute;
+        top: 0;
+        right: 0;
+        /* z-index: 3; */
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        text-align: center;
+        background-color: red;
+        border-radius: 15px;
+        /* display: inline-block; */
+        color: white;
+      }
+
+      #notification {
+        width: 50px;
+        height: 50px;
+        background-image: url("./assets/alert2.svg");
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-btn" id="notification">
+      <span class="note-num">1</span>
+    </div>
+  </body>
+</html>
