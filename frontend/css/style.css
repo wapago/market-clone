@@ -28,7 +28,7 @@ body {
   opacity: 1;
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 700px) {
   .media-info-msg {
     opacity: 0;
   }
