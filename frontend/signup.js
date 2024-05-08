@@ -5,9 +5,6 @@ const checkPassword = () => {
   const password1 = formData.get("password");
   const password2 = formData.get("password2");
 
-  console.log(password1);
-  console.log(password2);
-
   if (password1 == password2) return true;
   else return false;
 };
@@ -32,8 +29,6 @@ const handleSubmitForm = async (event) => {
     const data = await res.json();
 
     if (data == "200") {
-      //   div.innerText = "회원가입에 성공했습니다!";
-      //   div.style.color = "blue";
       alert("회원 가입에 성공했습니다.");
       window.location.pathname = "/login.html";
     }
