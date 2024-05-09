@@ -1,4 +1,5 @@
-from fastapi import FastAPI,UploadFile,Form,Response,Depends
+from fastapi import FastAPI,UploadFile,Form,Response,Depends,Cookie
+from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
@@ -44,7 +45,7 @@ def query_user(data):
     return user
 
 @app.post('/login')
-def login(id:Annotated[str, Form()], password:Annotated[str, Form()]):
+def login(id:Annotated[str, Form()], password:Annotated[str, Form()], response:JSONResponse):
     user = query_user(id)
     if not user:
         raise InvalidCredentialsException
@@ -58,6 +59,8 @@ def login(id:Annotated[str, Form()], password:Annotated[str, Form()]):
             'email':user['email'],
         }
     })
+    
+    response.set_cookie(key="access_token", value=access_token)
 
     return {'access_token':access_token}
 
